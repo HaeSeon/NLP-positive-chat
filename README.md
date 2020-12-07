@@ -4,7 +4,7 @@
 
 ## "정말" 소개영상 (Youtube link) 👇 Image Click!!
 
-[![정말 소개영상](http://img.youtube.com/vi/QYNwbZHmh8g/0.jpg)](https://youtu.be/C-k522dH43o) 
+[![정말 소개영상](http://img.youtube.com/vi/C-k522dH43o/0.jpg)](https://youtu.be/C-k522dH43o) 
 
 "오늘 당신의 대화는 긍정적인가요?"
 
