@@ -10,7 +10,7 @@
 
 자연어 처리를 이용한 긍정 채팅 프로젝트 "정말"
 
-"정말" 이란?
+**"정말" 이란?**
 - 자연어 처리 기술을 통해 채팅 로그를 분석하여 긍정적, 혹은 부정적인지를 검사합니다.
 - 실시간으로 업데이트되는 나의 언어 습관을 되돌아보며, 긍정적인 대화 습관을 함향하는 것에 목표가 있습니다. 
 사용된 기술로는 Python과 BERT를 통해 자연어 처리 모델을 학습하였고, React JS, Node JS, ExpressJS, Flask 를 사용하여 웹 어플리케이션 개발 및 REST API를 구축하였습니다. 
@@ -54,7 +54,8 @@
 
 **3. 이 채팅로그는 실시간으로 Flask server에 보내진다.**
 
-**4. Flask server 에서는 학습된 딥러닝 모델이 사용자의 채팅로그를 분석하여 긍/부정 의 출력값을 만든뒤 서버를 거쳐 사용자가 분석결과를 볼 수 있게 된다.
+**4. Flask server 에서는 학습된 딥러닝 모델이 사용자의 채팅로그를 분석하여 긍/부정 의 출력값을 만든뒤 서버를 거쳐 사용자가 분석결과를 볼 수 있게 된다.**
+
 
 ## 자연어 처리 과정
 
@@ -68,51 +69,53 @@
 
 * test_data : 50K
 
-```!git clone https://github.com/e9t/nsmc.git```
+  ```!git clone https://github.com/e9t/nsmc.git```
 
 
 2. Input data 전처리
 
-* Token : 단어를 위치로 표현 (숫자에 mapping)
+  * Token : 단어를 위치로 표현 (숫자에 mapping)
 
-```tokenizer = BertTokenizer.from_pretrained('bert-base-multilingual-cased')```
+      ```tokenizer = BertTokenizer.from_pretrained('bert-base-multilingual-cased')```
 
-* Mask : Token input이 존재하는 부분 :1, 아닌 부분 :0
+  * Mask : Token input이 존재하는 부분 :1, 아닌 부분 :0
 
-```mask = [1]*(SEQ_LEN-num_zeros) + [0]*num_zeros``` 
+     ```mask = [1]*(SEQ_LEN-num_zeros) + [0]*num_zeros``` 
 
-* Segment : 문장의 순서를 구분해주는 input. 채팅로그의 경우 문장의 전후관계가 모호하여 모든 값을 0으로 두었다. 
+  * Segment : 문장의 순서를 구분해주는 input. 채팅로그의 경우 문장의 전후관계가 모호하여 모든 값을 0으로 두었다. 
 
-```segment = [0]*SEQ_LEN```
+     ```segment = [0]*SEQ_LEN```
 
 
 3. 모델 학습
 
-150K개의 train_data 를 BERT 모형에 넣고 학습시킨 결과,
+  150K개의 train_data 를 BERT 모형에 넣고 학습시킨 결과,
 
 ```2/1500 [..............................] - ETA: 9:15:51 - loss: 0.6895 - accuracy: 0.5450 WARNING:tensorflow:Callbacks method `on_train_batch_end` is slow compared to the batch time (batch time: 0.0110s vs `on_train_batch_end` time: 0.1476s). Check your callbacks.
 WARNING:tensorflow:Callbacks method `on_train_batch_end` is slow compared to the batch time (batch time: 0.0110s vs `on_train_batch_end` time: 0.1476s). Check your callbacks.
 1500/1500 [==============================] - ETA: 0s - loss: 0.4512 - accuracy: 0.7800WARNING:tensorflow:Callbacks method `on_test_batch_end` is slow compared to the batch time (batch time: 0.0046s vs `on_test_batch_end` time: 0.0417s). Check your callbacks.
-
 WARNING:tensorflow:Callbacks method `on_test_batch_end` is slow compared to the batch time (batch time: 0.0046s vs `on_test_batch_end` time: 0.0417s). Check your callbacks.
 1500/1500 [==============================] - 316s 211ms/step - loss: 0.4512 - accuracy: 0.7800 - val_loss: 0.3575 - val_accuracy: 0.8402
 Epoch 2/4
-
 1500/1500 [==============================] - 261s 174ms/step - loss: 0.3361 - accuracy: 0.8499 - val_loss: 0.3301 - val_accuracy: 0.8538
 Epoch 3/4
-
 1500/1500 [==============================] - 262s 174ms/step - loss: 0.2952 - accuracy: 0.8717 - val_loss: 0.3040 - val_accuracy: 0.8663
 Epoch 4/4
-
 1500/1500 [==============================] - 262s 175ms/step - loss: 0.2602 - accuracy: 0.8892 - val_loss: 0.3107 - val_accuracy: 0.8684```
 
-**loss : 0.26, accuracy : 0.89**
+  **loss : 0.26, accuracy : 0.89**
 
-이렇게 학습된 모델의 가중치를 저장. 
+  이렇게 학습된 모델의 가중치를 저장. 
 
 4. REST API 구축
 
-저장된 가중치를 불러와 채팅 로그를 분석할 수 있도록 REST API를 flask에서 구축
+  저장된 가중치를 불러와 채팅 로그를 분석할 수 있도록 REST API를 flask에서 구축. 이제 웹서버가 요청하면 응답 가능한 형태로 가공이 완료되었다. 
+  
+5. 기대효과
+
+  * 실시간으로 자신의 언어습관을 웹이 보여줌으로써 사용자에게 엔터키를 누르기 전, 자신의 chat에 대해 경각심을 가질 수 있다. 
+  
+  * 자신의 언어습관 성찰을 할 수 있으며 이를 통해 긍정적 대화습관과 사고방식을 거쳐 타인에게도 긍정적 영향을 줄 것을 목표로 한다. 
 
 
 ## 참고자료
