@@ -4,7 +4,7 @@
 
 ## "정말" 소개영상 (Youtube link) 👇 Image Click!!
 
-[![정말 소개영상](http://img.youtube.com/vi/C-k522dH43o/0.jpg)](https://youtu.be/C-k522dH43o) 
+[![정말 소개영상](http://img.youtube.com/vi/C-k522dH43o/hqdefault.jpg)](https://youtu.be/C-k522dH43o) 
 
 "오늘 당신의 대화는 긍정적인가요?"
 
@@ -17,7 +17,7 @@
 
 ## 시연 영상 (Youtube link) 👇 Image Click!!
 
-[![정말 시연영상](http://img.youtube.com/vi/mhc3Qf3GtWY/0.jpg)](https://youtu.be/mhc3Qf3GtWY)
+[![정말 시연영상](http://img.youtube.com/vi/mhc3Qf3GtWY/hqdefault.jpg)](https://youtu.be/mhc3Qf3GtWY)
 
 ## 왜 "정말" 은 필요할까?
 1. 지인과의 대화에서 지인의 감정에 동화되는 경우가 빈번하다. 아침에 학교에 갔을 때 친구가 웃으며 인사해주면 나도 기분이 좋아진다. 이렇게 사람의 감정은 주변 사람들과 서로 영향을 미치며 이것을 “감정 전염” 이라고 한다.
