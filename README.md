@@ -119,6 +119,8 @@ Epoch 4/4
 * SPA 프레임워크로 React 사용
 
 * Node js, Express 사용
+
+* soket 통신으로 채팅 구현
   
   
 ## 기대효과
