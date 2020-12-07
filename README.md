@@ -48,10 +48,13 @@
 
 <img width="700" alt="시스템구성도" src="https://user-images.githubusercontent.com/18053479/101399021-41bc8300-3912-11eb-9e37-264a1195fca1.PNG">
 
-1. 사용자가 채팅을 하면 서버에 채팅로그가 전달된다. 
-2. 로그는 DB에 저장되며 기존 채팅과 함께 client 로 전달된다. 
-3. 이 채팅로그는 실시간으로 Flask server에 보내진다. 
-4. Flask server 에서는 학습된 딥러닝 모델이 사용자의 채팅로그를 분석하여 긍/부정 의 출력값을 만든뒤 서버를 거쳐 사용자가 분석결과를 볼 수 있게 된다. 
+**1. 사용자가 채팅을 하면 서버에 채팅로그가 전달된다.**
+
+**2. 로그는 DB에 저장되며 기존 채팅과 함께 client 로 전달된다.**
+
+**3. 이 채팅로그는 실시간으로 Flask server에 보내진다.**
+
+**4. Flask server 에서는 학습된 딥러닝 모델이 사용자의 채팅로그를 분석하여 긍/부정 의 출력값을 만든뒤 서버를 거쳐 사용자가 분석결과를 볼 수 있게 된다.
 
 ## 자연어 처리 과정
 
@@ -60,38 +63,55 @@
 ![Picture4](https://user-images.githubusercontent.com/18053479/101405400-5e10ed80-391b-11eb-8cb9-7421c8a68f7d.png)
 
 1. 학습데이터셋 : 네이버 감정 분석 데이터 
+
 * train_data : 150K
+
 * test_data : 50K
 
 ```!git clone https://github.com/e9t/nsmc.git```
 
+
 2. Input data 전처리
+
 * Token : 단어를 위치로 표현 (숫자에 mapping)
+
 ```tokenizer = BertTokenizer.from_pretrained('bert-base-multilingual-cased')```
+
 * Mask : Token input이 존재하는 부분 :1, 아닌 부분 :0
+
 ```mask = [1]*(SEQ_LEN-num_zeros) + [0]*num_zeros``` 
+
 * Segment : 문장의 순서를 구분해주는 input. 채팅로그의 경우 문장의 전후관계가 모호하여 모든 값을 0으로 두었다. 
+
 ```segment = [0]*SEQ_LEN```
 
+
 3. 모델 학습
+
 150K개의 train_data 를 BERT 모형에 넣고 학습시킨 결과,
 
 ```2/1500 [..............................] - ETA: 9:15:51 - loss: 0.6895 - accuracy: 0.5450 WARNING:tensorflow:Callbacks method `on_train_batch_end` is slow compared to the batch time (batch time: 0.0110s vs `on_train_batch_end` time: 0.1476s). Check your callbacks.
 WARNING:tensorflow:Callbacks method `on_train_batch_end` is slow compared to the batch time (batch time: 0.0110s vs `on_train_batch_end` time: 0.1476s). Check your callbacks.
 1500/1500 [==============================] - ETA: 0s - loss: 0.4512 - accuracy: 0.7800WARNING:tensorflow:Callbacks method `on_test_batch_end` is slow compared to the batch time (batch time: 0.0046s vs `on_test_batch_end` time: 0.0417s). Check your callbacks.
+
 WARNING:tensorflow:Callbacks method `on_test_batch_end` is slow compared to the batch time (batch time: 0.0046s vs `on_test_batch_end` time: 0.0417s). Check your callbacks.
 1500/1500 [==============================] - 316s 211ms/step - loss: 0.4512 - accuracy: 0.7800 - val_loss: 0.3575 - val_accuracy: 0.8402
 Epoch 2/4
+
 1500/1500 [==============================] - 261s 174ms/step - loss: 0.3361 - accuracy: 0.8499 - val_loss: 0.3301 - val_accuracy: 0.8538
 Epoch 3/4
+
 1500/1500 [==============================] - 262s 174ms/step - loss: 0.2952 - accuracy: 0.8717 - val_loss: 0.3040 - val_accuracy: 0.8663
 Epoch 4/4
+
 1500/1500 [==============================] - 262s 175ms/step - loss: 0.2602 - accuracy: 0.8892 - val_loss: 0.3107 - val_accuracy: 0.8684```
 
 **loss : 0.26, accuracy : 0.89**
+
 이렇게 학습된 모델의 가중치를 저장. 
 
 4. REST API 구축
+
 저장된 가중치를 불러와 채팅 로그를 분석할 수 있도록 REST API를 flask에서 구축
 
 
