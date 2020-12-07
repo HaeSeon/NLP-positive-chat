@@ -29,15 +29,15 @@
 4. 또한 대화 상대마다 “나”의 모습이 바뀌는 경우가 많다는 설문결과를 얻고 상호간의 악영향을 미치지 않는 채팅습관을 위한 플랫폼을 개발하고자 하였다. 대화 분위기에 휩쓸려 옳고 그름의 이치 파악은 뒤로한채 글을 읽고, 쓰고있는 경우에 대해 경각심을 주는데 도움이 될 것이라 생각한다.
 
 ## 주요 기능 
-1. 로그인
+**1. 로그인**
 
 <img width="700" alt="로그인창" src="https://user-images.githubusercontent.com/18053479/101400748-b1cc0880-3914-11eb-8f8e-74f94137b6f4.PNG">
 
-2. 채팅방별 대화의 긍정도 실시간 분석
+**2. 채팅방별 대화의 긍정도 실시간 분석**
 
 <img width="700" alt="긍정도분석" src="https://user-images.githubusercontent.com/18053479/101400759-b395cc00-3914-11eb-82dd-d0e232b361d2.PNG">
 
-3. 긍정도에 따른 채팅방 배경화면 자동 변경
+**3. 긍정도에 따른 채팅방 배경화면 자동 변경**
 
 <img width="700" alt="긍정배경" src="https://user-images.githubusercontent.com/18053479/101400761-b42e6280-3914-11eb-9a40-9e23743c7f4a.PNG">
 
@@ -48,7 +48,24 @@
 
 <img width="700" alt="시스템구성도" src="https://user-images.githubusercontent.com/18053479/101399021-41bc8300-3912-11eb-9e37-264a1195fca1.PNG">
 
-# 모델 학습 
+1. 사용자가 채팅을 하면 서버에 채팅로그가 전달된다. 
+2. 로그는 DB에 저장되며 기존 채팅과 함께 client 로 전달된다. 
+3. 이 채팅로그는 실시간으로 Flask server에 보내진다. 
+4. Flask server 에서는 학습된 딥러닝 모델이 사용자의 채팅로그를 분석하여 긍/부정 의 출력값을 만든뒤 서버를 거쳐 사용자가 분석결과를 볼 수 있게 된다. 
+
+## 모델 학습 
+
+학습 모델로는 BERT를 사용. BERT는 3개의 Input(token, mask, segment)이 들어가면 긍정도 확률이 output으로 나온다. 
+
+![Picture4](https://user-images.githubusercontent.com/18053479/101405400-5e10ed80-391b-11eb-8cb9-7421c8a68f7d.png)
+
+1. 학습데이터셋 : 네이버 감정 분석 데이터 
+
+```!git clone https://github.com/e9t/nsmc.git```
+
+2. Tokenizer
+
+```tokenizer = BertTokenizer.from_pretrained('bert-base-multilingual-cased')```
 
 ## 참고자료
 - https://github.com/google-research/bert
