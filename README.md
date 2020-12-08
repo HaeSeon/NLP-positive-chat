@@ -92,17 +92,17 @@
 
   150K개의 train_data 를 BERT 모형에 넣고 학습시킨 결과,
 
-```2/1500 [..............................] - ETA: 9:15:51 - loss: 0.6895 - accuracy: 0.5450 WARNING:tensorflow:Callbacks method `on_train_batch_end` is slow compared to the batch time (batch time: 0.0110s vs `on_train_batch_end` time: 0.1476s). Check your callbacks.
-WARNING:tensorflow:Callbacks method `on_train_batch_end` is slow compared to the batch time (batch time: 0.0110s vs `on_train_batch_end` time: 0.1476s). Check your callbacks.
-1500/1500 [==============================] - ETA: 0s - loss: 0.4512 - accuracy: 0.7800WARNING:tensorflow:Callbacks method `on_test_batch_end` is slow compared to the batch time (batch time: 0.0046s vs `on_test_batch_end` time: 0.0417s). Check your callbacks.
-WARNING:tensorflow:Callbacks method `on_test_batch_end` is slow compared to the batch time (batch time: 0.0046s vs `on_test_batch_end` time: 0.0417s). Check your callbacks.
-1500/1500 [==============================] - 316s 211ms/step - loss: 0.4512 - accuracy: 0.7800 - val_loss: 0.3575 - val_accuracy: 0.8402
-Epoch 2/4
-1500/1500 [==============================] - 261s 174ms/step - loss: 0.3361 - accuracy: 0.8499 - val_loss: 0.3301 - val_accuracy: 0.8538
-Epoch 3/4
-1500/1500 [==============================] - 262s 174ms/step - loss: 0.2952 - accuracy: 0.8717 - val_loss: 0.3040 - val_accuracy: 0.8663
-Epoch 4/4
-1500/1500 [==============================] - 262s 175ms/step - loss: 0.2602 - accuracy: 0.8892 - val_loss: 0.3107 - val_accuracy: 0.8684```
+    2/1500 [..............................] - ETA: 9:15:51 - loss: 0.6895 - accuracy: 0.5450 WARNING:tensorflow:Callbacks method `on_train_batch_end` is slow compared to the batch time (batch time: 0.0110s vs `on_train_batch_end` time: 0.1476s). Check your callbacks.
+    WARNING:tensorflow:Callbacks method `on_train_batch_end` is slow compared to the batch time (batch time: 0.0110s vs `on_train_batch_end` time: 0.1476s). Check your callbacks.
+    1500/1500 [==============================] - ETA: 0s - loss: 0.4512 - accuracy: 0.7800WARNING:tensorflow:Callbacks method `on_test_batch_end` is slow compared to the batch time (batch time: 0.0046s vs `on_test_batch_end` time: 0.0417s). Check your callbacks.
+    WARNING:tensorflow:Callbacks method `on_test_batch_end` is slow compared to the batch time (batch time: 0.0046s vs `on_test_batch_end` time: 0.0417s). Check your callbacks.
+    1500/1500 [==============================] - 316s 211ms/step - loss: 0.4512 - accuracy: 0.7800 - val_loss: 0.3575 - val_accuracy: 0.8402
+    Epoch 2/4
+    1500/1500 [==============================] - 261s 174ms/step - loss: 0.3361 - accuracy: 0.8499 - val_loss: 0.3301 - val_accuracy: 0.8538
+    Epoch 3/4
+    1500/1500 [==============================] - 262s 174ms/step - loss: 0.2952 - accuracy: 0.8717 - val_loss: 0.3040 - val_accuracy: 0.8663
+    Epoch 4/4
+    1500/1500 [==============================] - 262s 175ms/step - loss: 0.2602 - accuracy: 0.8892 - val_loss: 0.3107 - val_accuracy: 0.8684
 
   **loss : 0.26, accuracy : 0.89**
 
