@@ -29,19 +29,20 @@
   4. 또한 대화 상대마다 “나”의 모습이 바뀌는 경우가 많다는 설문결과를 얻고 상호간의 악영향을 미치지 않는 채팅습관을 위한 플랫폼을 개발하고자 하였다. 대화 분위기에 휩쓸려 옳고 그름의 이치 파악은 뒤로한채 글을 읽고, 쓰고있는 경우에 대해 경각심을 주는데 도움이 될 것이라 생각한다.
 
 ## 주요 기능 
-**1. 로그인**
+  **1. 로그인**
 
-<img width="700" alt="로그인창" src="https://user-images.githubusercontent.com/18053479/101400748-b1cc0880-3914-11eb-8f8e-74f94137b6f4.PNG">
+  <img width="700" alt="로그인창" src="https://user-images.githubusercontent.com/18053479/101400748-b1cc0880-3914-11eb-8f8e-74f94137b6f4.PNG">
 
-**2. 채팅방별 대화의 긍정도 실시간 분석**
+  **2. 채팅방별 대화의 긍정도 실시간 분석**
 
-<img width="700" alt="긍정도분석" src="https://user-images.githubusercontent.com/18053479/101400759-b395cc00-3914-11eb-82dd-d0e232b361d2.PNG">
+  <img width="700" alt="긍정도분석" src="https://user-images.githubusercontent.com/18053479/101400759-b395cc00-3914-11eb-82dd-d0e232b361d2.PNG">
 
-**3. 긍정도에 따른 채팅방 배경화면 자동 변경**
+  **3. 긍정도에 따른 채팅방 배경화면 자동 변경**
 
-<img width="700" alt="긍정배경" src="https://user-images.githubusercontent.com/18053479/101400761-b42e6280-3914-11eb-9a40-9e23743c7f4a.PNG">
+  <img width="700" alt="긍정배경" src="https://user-images.githubusercontent.com/18053479/101400761-b42e6280-3914-11eb-9a40-9e23743c7f4a.PNG">
+  
 
-<img width="700" alt="부정배경" src="https://user-images.githubusercontent.com/18053479/101400755-b2fd3580-3914-11eb-9632-9f0ed761b85e.PNG">
+  <img width="700" alt="부정배경" src="https://user-images.githubusercontent.com/18053479/101400755-b2fd3580-3914-11eb-9632-9f0ed761b85e.PNG">
 
 
 ## 시스템 구성도
