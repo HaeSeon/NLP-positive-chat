@@ -136,4 +136,4 @@
 - [google-BERT] https://github.com/google-research/bert
 - [kimwoonggon] https://github.com/kimwoonggon/publicservant_AI
 - [Huggingface] https://huggingface.co/transformers/
-- [naver] https://github.com/e9t/nsmc
+- [nsmc] https://github.com/e9t/nsmc
